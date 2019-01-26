@@ -8,6 +8,34 @@ Docker container in GCE will publish Angular application on Nginx.
 
 You need to make two triggers for initialization and update (cloudbuild.init.yml, cloudbuild.yml).
 
+I setted each trigger the following condition.
+
+* init trigger
+
+** Trigger Type: branch
+** Pattern Match: .*
+** Include File Filter: .init
+
+*Git Opperation*
+
+```console
+vi .init
+git commit .init -m "trigger initialize"
+git push origin HEAD
+```
+
+* update trigger
+
+** Trigger Type: tag
+** Pattern Match: release_v*
+
+*Git Opperation*
+
+```console
+git tag -s release_v1 -m "first release"
+git push origin release_v1
+```
+
 In addition, please set the following key for update trigger.
 
 * _GIT_MAIL=[YourGitEmail]
