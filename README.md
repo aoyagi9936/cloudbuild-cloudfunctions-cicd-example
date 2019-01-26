@@ -1,6 +1,8 @@
-# cloudbuild-to-gce-container-example
+# cloudbuild-gce-container-example
 
 This script is create and update gce container by cloud build.
+
+Docker container in GCE will publish Angular application on Nginx.
 
 You need to make two triggers for initialization and update (cloudbuild.init.yml, cloudbuild.yml).
 

@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'asia.gcr.io/${PROJECT_ID}/gce-container-sample',
-  '--build-arg', 'GIT_MAIL=${_GIT_MAIL}', '--build-arg', 'GIT_USER=${_GIT_USER}', 'docker/gce-container-sample']
+  '--build-arg', 'GIT_MAIL=${_GIT_MAIL}', '--build-arg', 'GIT_USER=${_GIT_USER}', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'asia.gcr.io/${PROJECT_ID}/gce-container-sample']
 - name: 'gcr.io/cloud-builders/gcloud'

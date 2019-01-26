@@ -1,7 +1,7 @@
 FROM node:8.15.0-alpine as builder
 
-ARG _GIT_MAIL
-ARG _GIT_USER
+ARG GIT_MAIL
+ARG GIT_USER
 
 # install angular-cli
 RUN chown -R node:node /usr/local/lib/node_modules \
@@ -17,8 +17,8 @@ RUN ng set --global packageManager=npm
 RUN apk add --update git zip
 
 # git config
-RUN git config --global user.email ${_GIT_MAIL} \
-    && git config --global user.name ${_GIT_USER}
+RUN git config --global user.email ${GIT_MAIL} \
+    && git config --global user.name ${GIT_USER}
 
 # build application
 WORKDIR /app
