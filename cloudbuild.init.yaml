@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'compute', 'instances', 'create-with-container', 'gce-container-sample',
   '--zone', 'asia-northeast1-a',
-  '--container-image', 'asia.gcr.io/$PROJECT_ID/gce-container-sample',
+  '--container-image', 'nginx',
   '--machine-type', 'g1-small',
   '--boot-disk-size', '10',
   '--tags', 'http-server',
