@@ -22,16 +22,16 @@ RUN git config --global user.email ${GIT_MAIL} \
 
 # build application
 WORKDIR /app
-RUN ng new gce-conainer-sample
-WORKDIR /app/gce-conainer-sample
+RUN ng new gce-container-sample
+WORKDIR /app/gce-container-sample
 RUN npm install \
     && ng build --prod \
-    && zip -r app.zip dist/gce-conainer-sample
+    && zip -r app.zip dist/gce-container-sample
 
 FROM nginx:1.15.8-alpine
 
 # deploy
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/gce-conainer-sample/app.zip /usr/share/nginx/html
+COPY --from=builder /app/gce-container-sample/app.zip /usr/share/nginx/html
 WORKDIR /usr/share/nginx/html
 RUN unzip app.zip
