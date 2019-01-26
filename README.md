@@ -6,8 +6,8 @@ You need to make two triggers for initialization and update (cloudbuild.init.yml
 
 In addition, please set the following key for update trigger.
 
-* _GIT_MAIL=<YourGitEmail>
-* _GIT_USER=<YourGitUser>
+* _GIT_MAIL=[YourGitEmail]
+* _GIT_USER=[YourGitUser]
 
 # NOTE
 

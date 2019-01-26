@@ -26,12 +26,12 @@ RUN ng new gce-conainer-sample
 WORKDIR /app/gce-conainer-sample
 RUN npm install \
     && ng build --prod \
-    && zip -r deploy.zip dist/gce-conainer-sample
+    && zip -r app.zip dist/gce-conainer-sample
 
 FROM nginx:1.15.8-alpine
 
 # deploy
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/gce-conainer-sample/deploy.zip /usr/share/nginx/html
+COPY --from=builder /app/gce-conainer-sample/app.zip /usr/share/nginx/html
 WORKDIR /usr/share/nginx/html
-RUN unzip deploy.zip
+RUN unzip app.zip
