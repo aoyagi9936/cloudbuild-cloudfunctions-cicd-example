@@ -10,26 +10,28 @@ You need to make two triggers for initialization and update (cloudbuild.init.yml
 
 I setted each trigger the following condition.
 
-* init trigger
+#### init trigger (create gce container instance)
 
-** Trigger Type: branch
-** Pattern Match: .*
-** Include File Filter: .init
+- Trigger Name: gce-container-example-init
+- Trigger Type: branch
+~ Pattern Match: .*
+- Include File Filter: .init
 
-*Git Opperation*
+*Opperation is*
 
 ```console
-vi .init
+echo >> .init
 git commit .init -m "trigger initialize"
 git push origin HEAD
 ```
 
-* update trigger
+#### update trigger (update gce container instance)
 
-** Trigger Type: tag
-** Pattern Match: release_v*
+- Trigger Name: gce-container-example
+- Trigger Type: tag
+- Pattern Match: release_v*
 
-*Git Opperation*
+*Opperation is*
 
 ```console
 git tag -s release_v1 -m "first release"
