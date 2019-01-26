@@ -14,5 +14,5 @@ In addition, please set the following key for update trigger.
 # NOTE
 
 This script uses following ZONE and GCR HOST
-* ZONE:asia-northeast1-a
-* GCR HOST:asia.gcr.io
+* ZONE:us-central1-a
+* GCR HOST:gcr.io
