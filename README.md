@@ -6,7 +6,7 @@ This script is create and update gce container by cloud build.
 
 Docker Container in GCE will publish Angular application on Nginx.
 
-You need to make two triggers for initialization and update (cloudbuild.init.yml, cloudbuild.yml).
+You need to make two triggers for initialization and update (cloudbuild.init.yaml, cloudbuild.yaml).
 
 I setted each trigger the following condition.
 
@@ -17,7 +17,7 @@ I setted each trigger the following condition.
 - Pattern Match: .*
 - Include File Filter: .init
 
-*Opperation is*
+*Operation is*
 
 ```console
 echo >> .init
@@ -36,7 +36,7 @@ In addition, please set the following key for update trigger.
 - _GIT_MAIL=[YourGitEmail]
 - _GIT_USER=[YourGitUser]
 
-*Opperation is*
+*Operation is*
 
 ```console
 git tag -s release_v1 -m "first release"
