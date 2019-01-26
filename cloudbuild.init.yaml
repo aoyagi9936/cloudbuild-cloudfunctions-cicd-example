@@ -1,5 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
+  args: ['firewall-rules', 'create', 'default-allow-http', '--allow', 'tcp:80', '--network', 'default', '--source-ranges', '0.0.0.0/0' '--target-tags', 'http-server']
+- name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'compute', 'instances', 'create-with-container', 'gce-container-sample',
   '--zone', 'asia-northeast1-a',
   '--container-image', 'nginx',
