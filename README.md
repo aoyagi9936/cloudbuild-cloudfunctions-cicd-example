@@ -1,4 +1,4 @@
-# cloudbuild-to-gce-container-example
+# cloudbuild-gce-container-example
 
 This script is create and update gce container by cloud build.
 
