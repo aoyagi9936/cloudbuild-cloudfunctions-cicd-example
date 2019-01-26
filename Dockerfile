@@ -1,5 +1,8 @@
 FROM node:8.15.0-alpine as builder
 
+ARG _GIT_MAIL
+ARG _GIT_USER
+
 # install angular-cli
 RUN chown -R node:node /usr/local/lib/node_modules \
     && chown -R node:node /usr/local/bin
@@ -14,21 +17,21 @@ RUN ng set --global packageManager=npm
 RUN apk add --update git zip
 
 # git config
-RUN git config --global user.email "aoyagisan@hotmail.com" \
-    && git config --global user.name "aoyagi9936"
+RUN git config --global user.email ${_GIT_MAIL} \
+    && git config --global user.name ${_GIT_USER}
 
 # build application
 WORKDIR /app
-RUN ng new gcp-cicd-example
-WORKDIR /app/gcp-cicd-example
+RUN ng new gce-conainer-sample
+WORKDIR /app/gce-conainer-sample
 RUN npm install \
     && ng build --prod \
-    && zip -r deploy.zip dist/gcp-cicd-example
+    && zip -r deploy.zip dist/gce-conainer-sample
 
 FROM nginx:1.15.8-alpine
 
 # deploy
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/gcp-cicd-example/deploy.zip /usr/share/nginx/html
+COPY --from=builder /app/gce-conainer-sample/deploy.zip /usr/share/nginx/html
 WORKDIR /usr/share/nginx/html
 RUN unzip deploy.zip
