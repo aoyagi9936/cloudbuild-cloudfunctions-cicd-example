@@ -1,5 +1,7 @@
 # cloudbuild-gce-container-example
 
+![Architecture Diagram](https://github.com/aoyagi9936/cloudbuild-gce-container-example/blob/master/architecture-diagram.png?raw=true)
+
 This script is create and update gce container by cloud build.
 
 Docker container in GCE will publish Angular application on Nginx.
