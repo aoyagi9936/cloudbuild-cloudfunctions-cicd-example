@@ -18,6 +18,7 @@ To execute this build, please add the following roles to the automatically gener
 - roles/iam.serviceAccountUser
 
 Please see following.
+
 https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions
 
 ## Cloud Build Configuration
