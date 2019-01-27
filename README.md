@@ -19,7 +19,7 @@ To execute this build, please add the following roles to the automatically gener
 
 Please see following.
 
-![Cloud Build Document](https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions)
+[Cloud Build Document](https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions)
 
 ## Cloud Build Configuration
 
