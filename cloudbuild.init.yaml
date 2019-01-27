@@ -4,6 +4,5 @@ steps:
   '--zone', 'us-central1-a',
   '--container-image', 'nginx',
   '--machine-type', 'f1-micro',
-  '--boot-disk-size', '10',
-  '--tags', 'http-server',
-  '--preemptible']
+  '--tags', 'http-server']
+
