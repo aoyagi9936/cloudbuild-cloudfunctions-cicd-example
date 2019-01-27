@@ -1,6 +1,8 @@
 # cloudbuild-gce-container-example
 
-![Architecture Diagram](https://github.com/aoyagi9936/cloudbuild-gce-container-example/blob/master/architecture-diagram.png?raw=true)
+<p align="center">
+  <img src="https://github.com/aoyagi9936/cloudbuild-gce-container-example/blob/master/architecture-diagram.png?raw=true">
+</p>
 
 This script is create and update gce container by cloud build.
 
@@ -19,7 +21,7 @@ To execute this build, please add the following roles to the automatically gener
 
 Please see following.
 
-https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions
+![Cloud Build Document](https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions)
 
 ## Cloud Build Configuration
 
