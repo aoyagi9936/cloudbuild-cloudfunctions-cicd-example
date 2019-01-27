@@ -10,6 +10,24 @@ You need to make two triggers for initialization and update (cloudbuild.init.yam
 
 I setted each trigger the following condition.
 
+## Set Service Account Permission
+
+To execute this build, please add the following roles to the automatically generated Cloud Build service account([YOUR_PROJECT_NUM]@cloudbuild.gserviceaccount.com).
+
+- roles/compute.instanceAdmin (OR roles/compute.instanceAdmin.v1)
+- roles/iam.serviceAccountUser
+
+Please see following.
+https://cloud.google.com/cloud-build/docs/securing-builds/set-service-account-permissions
+
+## Cloud Build Configuration
+
+At the moment you can choose the following Repositoriy Hosting.
+
+- Cloud Source Repositories
+- Bitbucket
+- GitHub
+
 #### Init Trigger (Create GCE instance with container)
 
 - Trigger Name: gce-container-example-init
