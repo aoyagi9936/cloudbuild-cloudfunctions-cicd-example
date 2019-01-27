@@ -1,8 +1,6 @@
 # cloudbuild-gce-container-example
 
-<p align="center">
-  <img src="https://github.com/aoyagi9936/cloudbuild-gce-container-example/blob/master/architecture-diagram.png?raw=true">
-</p>
+![Architecture Diagram](https://github.com/aoyagi9936/cloudbuild-gce-container-example/blob/master/architecture-diagram.png?raw=true)
 
 This script is create and update gce container by cloud build.
 
@@ -14,7 +12,7 @@ I setted each trigger the following condition.
 
 ## Set Service Account Permission
 
-To execute this build, please add the following roles to the automatically generated Cloud Build service account([YOUR_PROJECT_NUM]@cloudbuild.gserviceaccount.com).
+To execute this build, please add the following roles to the automatically generated Cloud Build Service Account. ([YOUR_PROJECT_NUM]@cloudbuild.gserviceaccount.com)
 
 - roles/compute.instanceAdmin (OR roles/compute.instanceAdmin.v1)
 - roles/iam.serviceAccountUser
