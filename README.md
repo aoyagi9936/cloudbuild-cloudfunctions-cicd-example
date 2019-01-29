@@ -39,11 +39,11 @@ At the moment you can choose the following Repositoriy Hosting.
 *Operation is*
 
 ```console
-echo >> .init
-git commit .init -m "start init trigger"
+$ echo >> .init
+$ git commit .init -m "start init trigger"
 # verify commit
 # git commit .init -m "start init trigger" -S
-git push origin HEAD
+$ git push origin HEAD
 ```
 
 #### Update Trigger (Update GCE instance with container)
@@ -60,10 +60,10 @@ In addition, please set the following key for update trigger.
 *Operation is*
 
 ```console
-git tag release_v1 -m "first release"
+$ git tag release_v1 -m "first release"
 # verify tag
 # git tag -s release_v1 -m "first release"
-git push origin release_v1
+$ git push origin release_v1
 ```
 
 # NOTE
