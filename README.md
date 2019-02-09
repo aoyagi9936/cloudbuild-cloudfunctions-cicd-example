@@ -33,12 +33,13 @@ At the moment you can choose the following Repositoriy Hosting.
 
 - Trigger Name: gce-container-example-init
 - Trigger Type: branch
-- Pattern Match: .*
+- Pattern Match: init-trigger
 - Include File Filter: .init
 
 *Operation is*
 
 ```console
+$ git checkout -b init-trigger
 $ echo >> .init
 $ git commit .init -m "start init trigger"
 # verify commit
