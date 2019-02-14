@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/kaniko-project/executor:latest'
+  args: ['--distination', 'gcr.io/${PROJECT_ID}/gce-container-sample',
+  '--cache=true', 'cache-ttl=6h',
+  '--build-arg', 'GIT_MAIL=${_GIT_MAIL}', '--build-arg', 'GIT_USER=${_GIT_USER}', '.']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'compute', 'instances', 'update-container', 'gce-container-sample',
+  '--zone', 'us-central1-a',
+  '--container-image', 'gcr.io/${PROJECT_ID}/gce-container-sample']
