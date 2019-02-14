@@ -11,7 +11,7 @@ RUN npm install -g @angular/cli
 
 # npm
 USER root
-RUN ng set --global packageManager=npm
+RUN ng config -g cli.packageManager npm
 
 # add package
 RUN apk add --update git zip
