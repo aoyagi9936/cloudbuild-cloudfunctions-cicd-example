@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/gce-container-sample',
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/gce-container-sample:${TAG_NAME}',
   '--build-arg', 'GIT_MAIL=${_GIT_MAIL}', '--build-arg', 'GIT_USER=${_GIT_USER}', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/gce-container-sample']
@@ -8,4 +8,4 @@ steps:
   args: ['beta', 'compute', 'instances', 'update-container', 'gce-container-sample',
   '--zone', 'us-central1-a',
   '--container-image', 'gcr.io/${PROJECT_ID}/gce-container-sample']
-images: ['gcr.io/${PROJECT_ID}/gce-container-sample']
+images: ['gcr.io/${PROJECT_ID}/gce-container-sample:${TAG_NAME}']

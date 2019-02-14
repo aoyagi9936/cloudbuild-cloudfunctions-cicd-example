@@ -7,3 +7,4 @@ steps:
   args: ['beta', 'compute', 'instances', 'update-container', 'gce-container-sample',
   '--zone', 'us-central1-a',
   '--container-image', 'gcr.io/${PROJECT_ID}/gce-container-sample:${TAG_NAME}']
+images: ['gcr.io/${PROJECT_ID}/gce-container-sample:${TAG_NAME}']
